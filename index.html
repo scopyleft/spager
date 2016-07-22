@@ -1,0 +1,117 @@
+<style>
+  body {
+    font-family: Helvetica;
+    margin: 0;
+  }
+  header {
+    border-bottom: 1px solid #999;
+    box-shadow: 0 3px 3px #ccc;
+    text-align: center;
+  }
+  nav {
+    display: table-cell;
+  }
+  nav a {
+    display: block;
+    padding: 8px 32px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  nav a.active,
+  nav a:hover {
+    background-color: #eee;
+    padding-left: 29px;
+    border-left: 3px solid #999;
+  }
+  nav a.active {
+    background-color: #ccc;
+  }
+  main {
+    display: table-cell;
+    padding: 50px;
+  }
+
+  footer {
+    margin-top: 20px;
+    background-color: #888;
+    color: #fff;
+    padding: 50px 100px;
+    box-shadow: 3px 0 3px #888;
+  }
+
+</style>
+
+<header>
+  <h1>SPAger.js demo!</h1>
+</header>
+
+<nav>
+  <a href="#">home</a>
+  <a href="#usage">How to use</a>
+</nav>
+
+<main>
+  <section class=page id=home>
+    <h1>Simple Single-Page-Application pager</h1>
+    <p>
+      This is an easy to use / hack / extend JavaScript pagination.<br>
+      It is non intrusive and based on URL hash (example.com/_#my-hash_).
+      It simply uses the native HTML anchor.
+    </p>
+    <p>See <a href="#usage">installation and usage</a> for further details.</p>
+    <p>Oh, what you are currently browsing is based on the SPAger.js!</p>
+  </section>
+
+  <section class=page id=usage>
+    <h1>How to use the spager.js?</h1>
+    <p>
+      Using the <em>spager</em> is very easy:
+      <ol>
+        <li>import _spager.js_</li>
+        <li>add a <code>class=page</code> in your HTML Nodes that should behave like pages</li>
+        <li>add an <code>id</code> attribute to each; that will be the page name.</li>
+      </ol>
+
+      <p>Now when you want to display a page just call the hash matching the page name.
+      Just like an HTML anchor!</p>
+
+      <p>
+        This current page is done with <em>spager.js</em>. Just view the source
+        for an example or checkout the <a href=demo.html>basic demo</a>.
+      </p>
+    </p>
+  </section>
+
+  <section class=page id=error404>
+    <h1>This page was not found!</h1>
+    <a href="#">Take me back home</a>
+  </section>
+</main>
+
+<footer>
+  View sources
+</footer>
+
+<script src="/src/spager.js"></script>
+<script>
+  spager.home = 'home'
+  spager.error404 = 'error404'
+  spager.init()
+
+  var navLinks = document.querySelectorAll('nav a')
+
+  // Select current 'active' nav item.
+  function watchNav() {
+    ;[].forEach.call(navLinks, function(link) {
+      if(spager.isCurrent(link.attributes['href'].value.slice(1))) {
+        link.classList.add('active')
+      }
+      else {
+        link.classList.remove('active')
+      }
+    })
+  }
+
+  window.addEventListener('hashchange', watchNav)
+  watchNav()
+</script>
