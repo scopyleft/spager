@@ -34,9 +34,19 @@
   footer {
     margin-top: 20px;
     background-color: #888;
-    color: #fff;
     padding: 50px 100px;
     box-shadow: 3px 0 3px #888;
+  }
+
+  footer a {
+    text-decoration: none;
+    display: block;
+    color: #ccc;
+    height: 32px;
+  }
+  footer a img {
+    height: 100%;
+    vertical-align: middle;
   }
 
 </style>
@@ -89,10 +99,13 @@
 </main>
 
 <footer>
-  View sources
+  <a href="https://github.com/vinyll/spager">
+    <img src=http://ottis.github.io/inrt/images/octocat.png />
+    View sources on Github
+  </a>
 </footer>
 
-<script src="/src/spager.js"></script>
+<script src="/src/spager.min.js"></script>
 <script>
   spager.home = 'home'
   spager.error404 = 'error404'

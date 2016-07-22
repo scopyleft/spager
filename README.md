@@ -1,7 +1,7 @@
 # SPAger
 
 SPAger is a SPA (Single Page Application) multi paging module based on routing.
-It is meant to be very light (<2Kb), modular, plug-and-play yet basic.
+It is meant to be very light (< 1Kb!), modular, plug-and-play yet basic.
 
 It is a standalone [Vanilla](http://vanilla-js.com/) JavaScript lib.
 
@@ -20,7 +20,7 @@ It is based on native browser anchors.
   <a href="#">Back home</a>
 </section>
 
-<script src="js/spager.js"></script>
+<script src="js/spager.min.js"></script>
 <script>spager.init()</script>
 ```
 
