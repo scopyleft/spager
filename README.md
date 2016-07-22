@@ -46,3 +46,5 @@ the homepage.
 not found.
 
 `spager.goto(pageName)`: changes the page to go to _pageName_ (string).
+
+`spager.isCurrent(name)`: returns true if the current page matches the _name_.
