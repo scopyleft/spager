@@ -48,3 +48,9 @@ not found.
 `spager.goto(pageName)`: changes the page to go to _pageName_ (string).
 
 `spager.isCurrent(name)`: returns true if the current page matches the _name_.
+
+
+## License
+
+MIT. [View LICENSE file](https://github.com/vinyll/spager/blob/master/LICENSE.md)
+for further details.
