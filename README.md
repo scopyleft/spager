@@ -7,8 +7,8 @@ It is a standalone [Vanilla](http://vanilla-js.com/) JavaScript lib.
 
 It is based on native browser anchors.
 
-[View a full working example](https://vinyll.github.io/spager/)
-or [a basic demo](https://vinyll.github.io/spager/demo.html)
+[View a full working example](https://scopyleft.fr/spager/)
+or [a basic demo](https://scopyleft.fr/spager/demo.html)
 
 ## Example
 
@@ -25,7 +25,7 @@ or [a basic demo](https://vinyll.github.io/spager/demo.html)
 <script src="js/spager.min.js"></script>
 <script>spager.init()</script>
 ```
-[See this code in action](https://vinyll.github.io/spager/demo.html)
+[See this code in action](https://scopyleft.fr/spager/demo.html)
 
 Here we have 2 pages: _home_ and _contact_.
 Pages are detected by the `class=page` attribute and the page name by the _id_ attribute.
