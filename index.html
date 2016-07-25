@@ -114,12 +114,11 @@
   var navLinks = document.querySelectorAll('nav a')
 
   // Select current 'active' nav item.
-  function watchNav() {
-    ;[].forEach.call(navLinks, function(link) {
-      if(spager.isCurrent(link.attributes['href'].value.slice(1))) {
+  function watchNav () {
+    ;[].forEach.call(navLinks, function (link) {
+      if (spager.isCurrent(link.attributes['href'].value.slice(1))) {
         link.classList.add('active')
-      }
-      else {
+      } else {
         link.classList.remove('active')
       }
     })

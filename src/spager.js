@@ -1,4 +1,4 @@
-(function(module) {
+;(function (module) {
   var pager = {
     // DOM NodeList (or any iterable) of the pages.
     pages: document.querySelectorAll('.page'),
@@ -13,9 +13,9 @@
     *   - listen for page changes
     *   - display home page.
     */
-    init: function() {
+    init: function () {
       var self = this
-      window.addEventListener('hashchange', function(event) {
+      window.addEventListener('hashchange', function (event) {
         self.show(self.getCurrentHash())
       })
 
@@ -27,7 +27,7 @@
     * Retrieves the current hash.
     * @return String
     */
-    getCurrentHash: function() {
+    getCurrentHash: function () {
       return document.location.hash.slice(1)
     },
 
@@ -35,11 +35,11 @@
     * Checks that the current pages matches a page name, or home.
     * @return Boolean
     */
-    isCurrent: function(name) {
-      if(name == this.getCurrentHash()) {
+    isCurrent: function (name) {
+      if (name === this.getCurrentHash()) {
         return true
       }
-      if(!name && this.getCurrentHash() == this.home) {
+      if (!name && this.getCurrentHash() === this.home) {
         return true
       }
       return false
@@ -48,8 +48,8 @@
     /**
     * Hide all pages
     */
-    hideAll: function() {
-      [].forEach.call(this.pages, function(page) {
+    hideAll: function () {
+      [].forEach.call(this.pages, function (page) {
         page.style.display = 'none'
       })
     },
@@ -58,25 +58,24 @@
     * Find the Node that matches the home best.
     * @return DOMNode
     */
-    getHome: function() {
+    getHome: function () {
       return this.home ? document.getElementById(this.home)
-                       : this.pages[0]
+        : this.pages[0]
     },
 
     /**
     * Modifies the pages DOM Nodes to display only the page matching 'name'.
     */
-    show: function(name) {
+    show: function (name) {
       this.hideAll()
 
       var target
-      if(name) {
+      if (name) {
         target = document.getElementById(name)
-      }
-      else {
+      } else {
         target = this.getHome()
       }
-      if(!target) {
+      if (!target) {
         target = document.getElementById(this.error404) || this.getHome()
       }
       target.style.display = 'inherit'
@@ -85,7 +84,7 @@
     /**
     * Requests a page change call.
     */
-    goto: function(name) {
+    goto: function (name) {
       document.location.hash = name || ' '
     }
   }
