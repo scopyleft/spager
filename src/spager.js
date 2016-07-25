@@ -50,7 +50,8 @@
     */
     hideAll: function () {
       [].forEach.call(this.pages, function (page) {
-        page.style.display = 'none'
+        page.classList.add('hidden')
+        page.classList.remove('current')
       })
     },
 
@@ -78,7 +79,8 @@
       if (!target) {
         target = document.getElementById(this.error404) || this.getHome()
       }
-      target.style.display = 'inherit'
+      target.classList.remove('hidden')
+      target.classList.add('current')
     },
 
     /**

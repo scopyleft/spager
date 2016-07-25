@@ -13,6 +13,8 @@ or [a basic demo](https://scopyleft.fr/spager/demo.html)
 ## Example
 
 ```
+<style>.hidden{display:none}</style>
+
 <section class=page>
   <h1>Welcome home!</h1>
   <a href="#contact">See contact infos</a>
@@ -31,6 +33,12 @@ Here we have 2 pages: _home_ and _contact_.
 Pages are detected by the `class=page` attribute and the page name by the _id_ attribute.
 The page change is executed based the hash in the URL.
 Easy and logic!
+
+CSS is very basic too:
+
+- `.hidden` class is applied on pages that should be hidden (include
+ [src/spager.min.css](src/spager.min.css) to apply it automatically or implement your own style).
+- `.current` class is applied on the currently visible page, for you convenience.
 
 `spager.init()` will initialize the spager.
 
